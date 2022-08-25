@@ -1,0 +1,28 @@
+
+{% extends 'common.html' %}
+
+{% block index %}
+<html>
+    <body bg-color='black'>
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+             <h2 style="color:red;background-color:green">UPLOAD  BOOKS</h2>
+        
+                {{form.as_p}} 
+
+        <button type='submit'>save</button>
+        
+    </form>  
+
+    <a href="{% url 'allbook' %}">
+        <h1>SEE ALL THE BOOKS</h1>
+    </a>      
+
+
+    {% if messages %}
+        {% for x in messages %}
+            <h2>{{x}}</h2>
+         {% endfor %}   
+
+    {% endif %}
+{% endblock %}

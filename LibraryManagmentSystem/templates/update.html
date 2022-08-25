@@ -1,0 +1,21 @@
+{% extends 'common.html' %}
+
+{% block index %}
+{% load static %}
+
+<form method='post' enctype='multipart/form'>
+    {% csrf_token %}
+    <table align='center' border='0'>
+        
+                <center><h2 style="background-color:red;color:green">UPDATE THE DATA</h2></center>
+
+              {{form}}
+        
+        <tr>
+            <th>
+                <button type='submit'>update</button>
+            </th>
+        </tr>
+    </table>
+</form>
+{% endblock %}                      

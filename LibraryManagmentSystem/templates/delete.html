@@ -1,0 +1,39 @@
+{% extends 'common.html' %}
+{% block index %}
+{% load static %}
+
+<table align='center' border='0'>
+    
+           <center> <h2 style="background-color:yellow;color:blue">Delete The Record</h2></center>
+      
+    <tr>
+        <th>Book Id</th>
+        <th>{{object.id}}</th>
+    </tr> 
+    <tr>
+        <th>Book Name</th>
+        <th>{{object.name}}</th>
+    </tr> 
+    <tr>
+        <th>Book Quantity</th>
+        <th>{{object.quantity}}</th>
+    </tr> 
+    <tr>
+        <th>Book </th>
+        <th>{{object.books}}</th>
+    </tr>   
+    <tr>
+        <th>
+            <form method='post'>
+                {% csrf_token %}         
+                <button type='submit'>delete</button>
+            </form>
+        </th>
+        <th>
+            <form action="{% url 'allbook' %}">        
+                <button type='submit'>cancel</button>
+            </form>
+        </th>
+    </tr>
+</table>
+{% endblock %}        

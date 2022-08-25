@@ -1,0 +1,34 @@
+{% extends 'common.html' %}
+
+{% block index %}
+    <form action="{% url 'save' %}" method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+         <table align='center'border='0'>
+                <tr>
+                    <th>
+                        <h2 style="align:'center';color:red">Admin Registration page</h2>
+                    </th>
+                </tr> 
+                <tr>
+                    <th>       
+                     {{form.as_p}}
+                    </th>
+                </tr>      
+                 <tr>
+                    <th>    
+                       <button type='submit'>save</button>
+                    </th>
+                </tr>
+            </table>           
+                
+    </form>
+    {% if messages %}       
+                {% for x in messages %}
+                    <h2>{{x}}</h2>
+                {% endfor %}
+
+    {% endif %}
+
+
+
+{% endblock %}
